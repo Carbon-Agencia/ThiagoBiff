@@ -117,6 +117,7 @@ section header h2 {
   font-weight: 400;
   color: var(--secondary-color);
   text-transform: uppercase;
+  letter-spacing: 1rem;
 }
 
 section header h1 {
@@ -128,7 +129,7 @@ section header h1 {
   font-weight: 100;
   text-transform: uppercase;
   white-space: nowrap;
-  letter-spacing: 3px;
+  letter-spacing: 1rem;
   position: absolute;
   top: -18.6rem;
   left: -20.3rem;
@@ -548,10 +549,6 @@ body.menu-expanded button path {
   text-align: center;
 }
 
-#portfolio h2 {
-  letter-spacing: 1rem;
-}
-
 #portfolio ul {
   margin-top: 5rem;
   margin-bottom: 10rem;
@@ -592,7 +589,7 @@ body.menu-expanded button path {
   transition: opacity 1s;
 }
 
-#portfolio col:hover p {
+#portfolio .col:hover p {
   opacity: 1;
 }
 
@@ -632,20 +629,32 @@ body.menu-expanded button path {
   height: 100%;
 }
 
+/*==== FEEDBACK ============================================ */
+
+section#feedback{
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+#feedback .col-a{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 /*==== FOOTER ============================================ */
 
 footer {
-  background-color: var(--primary-color);
+  background-color: var(--bg-color);
   padding-block: 6rem;
   text-align: left;
   color: var(--secondary-color);
+  height: 40rem;
 }
 
 footer .logo img {
   display: inline-block;
   margin-bottom: 2.4rem;
-  scale: 1.1;
-  filter: grayscale(100%);
 }
 
 footer p {
@@ -661,6 +670,7 @@ footer .social-links {
 /*==== WHATSAPP BUTTON ======================= */
 
 #wppButton {
+  z-index: 100;
   position: fixed;
   bottom: 2.5rem;
   right: 2.5rem;
@@ -668,7 +678,7 @@ footer .social-links {
 
 #wppButton svg {
   padding: 4px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border-radius: 50%;
   transition: 0.2s;
 }
@@ -679,33 +689,6 @@ footer .social-links {
 
 #wppButton svg path {
   fill: white;
-}
-
-/*==== BACK TO TOP ============================================ */
-
-#backToTopButton {
-  position: fixed;
-  bottom: 8.5rem;
-  right: 3rem;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(120%);
-  transition: 0.2s;
-}
-
-#backToTopButton:hover circle {
-  fill: var(--brand-hover);
-}
-
-#backToTopButton.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-#backToTopButton circle {
-  fill: var(--primary-color);
-  transition: fill 0.3s;
 }
 
 /*==== RESPONSIVE ============================================ */
@@ -916,29 +899,6 @@ footer .social-links {
     object-position: initial;
   }
 
-  /*==== SERVICES ======================= */
-
-  /* section#services {
-    padding-top: 10rem;
-    overflow-x: hidden;
-  }
-
-  #services h2 {
-    width: 53rem;
-    margin-inline: auto;
-  }
-
-  #services .cards {
-    flex-direction: row;
-    flex-wrap: no-wrap;
-    gap: 5rem;
-  }
-
-  #services .card {
-    width: 50%;
-    flex-grow: 1;
-  } */
-
   /*==== ABOUT ======================= */
 
   #about .wrapper {
@@ -1046,8 +1006,8 @@ footer .social-links {
   }
 
   footer .wrapper {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'A B';
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: 'A B C';
   }
 
   footer .col-a {
@@ -1055,6 +1015,19 @@ footer .social-links {
   }
 
   footer .col-b {
+    align-self: center;
+    justify-self: flex-end;
+  }
+
+  footer .col-b li{
+    margin-block: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  footer .col-c {
     align-self: center;
     justify-self: flex-end;
   }
