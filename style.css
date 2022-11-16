@@ -667,6 +667,7 @@ footer .social-links {
   justify-content: flex-start;
 }
 
+
 /*==== WHATSAPP BUTTON ======================= */
 
 #wppButton {
@@ -1020,11 +1021,15 @@ footer .social-links {
   }
 
   footer .col-b li{
-    margin-block: 2rem;
+    margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: .4rem;
     white-space: nowrap;
     color: #ffffff;
+  }
+
+  footer .col-b li:nth-child(3){
+    margin-bottom: 0;
   }
 
   footer .col-c {
