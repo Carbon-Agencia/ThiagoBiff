@@ -667,6 +667,45 @@ footer .social-links {
   justify-content: flex-start;
 }
 
+footer .col-b li{
+  position: relative;
+}
+
+footer .col-b li:nth-child(4) {
+  line-height: 3.5rem;
+}
+
+footer .col-b li:nth-child(1)::before,
+footer .col-b li:nth-child(2)::before,
+footer .col-b li:nth-child(3)::before,
+footer .col-b li:nth-child(4)::before{
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-size: 20px;
+  background-image: url(assets/svg-icons/location.svg);
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  transform: translateY(-50%);
+}
+
+footer .col-b li:nth-child(2)::before{
+  background-image: url(assets/svg-icons/mail.svg);
+}
+
+footer .col-b li:nth-child(3)::before{
+  background-image: url(assets/svg-icons/smartphone.svg);
+}
+
+footer .col-b li:nth-child(4)::before{
+  background-image: url(assets/svg-icons/phone-call.svg);
+  height: 17px;
+  width: 17px;
+  background-size: 17px;
+}
+
 
 /*==== WHATSAPP BUTTON ======================= */
 
