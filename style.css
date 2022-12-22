@@ -1,5 +1,6 @@
 /*==== GERAL ============================================ */
 
+
 @import url('http://fonts.cdnfonts.com/css/gotham');
 
 @font-face {
@@ -419,10 +420,6 @@ body.menu-expanded button path {
   background-color: var(--secondary-color);
 }
 
-#home .col-b .glider {
-  overflow: hidden;
-}
-
 /*==== ABOUT ============================================ */
 
 #about {
@@ -632,6 +629,8 @@ body.menu-expanded button path {
 /*==== FEEDBACK ============================================ */
 
 section#feedback{
+  padding-block: 20rem;
+  height: 70rem;
   background-color: var(--bg-color);
   text-align: center;
 }
@@ -640,6 +639,39 @@ section#feedback{
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#feedback .col-b{
+  width: 81rem;
+}
+
+#feedback .owl-prev,
+#feedback .owl-next{
+  top: 50%;
+  position: absolute;
+}
+
+#feedback .owl-prev:hover,
+#feedback .owl-next:hover{
+  background-color: transparent;
+}
+
+#feedback .owl-prev{
+  left: -15%;
+}
+
+#feedback .owl-next{
+  right: -15%;
+}
+
+#feedback .col-b p{
+  line-height: 2.5rem;
+  letter-spacing: .1rem;
+  padding-top: 2rem;
+}
+
+#feedback .item p:nth-child(2){
+  font-weight: 600;
 }
 
 /*==== FOOTER ============================================ */
@@ -665,45 +697,30 @@ footer p {
 
 footer .social-links {
   justify-content: flex-start;
+  opacity: .4;
 }
 
 footer .col-b li{
+  font-size: 1.2rem;
   position: relative;
 }
 
 footer .col-b li:nth-child(4) {
-  line-height: 3.5rem;
+  line-height: 2.5rem;
 }
 
-footer .col-b li:nth-child(1)::before,
-footer .col-b li:nth-child(2)::before,
-footer .col-b li:nth-child(3)::before,
-footer .col-b li:nth-child(4)::before{
-  content: '';
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  background-size: 20px;
-  background-image: url(assets/svg-icons/location.svg);
-  position: absolute;
-  top: 50%;
-  left: -10%;
-  transform: translateY(-50%);
+footer .col-b ul.icons{
+  float: left;
+  margin-right: 10px;
+  opacity: .4;
 }
 
-footer .col-b li:nth-child(2)::before{
-  background-image: url(assets/svg-icons/mail.svg);
+footer .col-b ul.icons svg{
+  width: 15px;
 }
 
-footer .col-b li:nth-child(3)::before{
-  background-image: url(assets/svg-icons/smartphone.svg);
-}
-
-footer .col-b li:nth-child(4)::before{
-  background-image: url(assets/svg-icons/phone-call.svg);
-  height: 17px;
-  width: 17px;
-  background-size: 17px;
+footer .col-b ul.icons svg path{
+  fill: white;
 }
 
 
@@ -1072,7 +1089,6 @@ footer .col-b li:nth-child(4)::before{
   }
 
   footer .col-c {
-    align-self: center;
     justify-self: flex-end;
   }
 

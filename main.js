@@ -1,19 +1,55 @@
 //#HOME GLIDER.JS INITIALIZER
 
 window.addEventListener('DOMContentLoaded', function () {
-   var slider = new Glider(document.querySelector('.glider-home'), {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      scrollLock: true,
-      scrollLockDelay: 0,
-      draggable: true,
-      dragVelocity: 3,
-      duration: 1,
-      arrows: {
-         prev: '.glider-prev',
-         next: '.glider-next'
+
+   $('.owl-one').owlCarousel({
+      autoplay: true,
+      autoplayHoverPause: true,
+      loop:true,
+      margin:10,
+      responsiveClass:true,
+      dots:false,
+      nav:false,
+      responsive:{
+          0:{
+              items:1,
+              nav:false
+          },
+          600:{
+              items:1,
+              nav:false
+          },
+          1000:{
+              items:1,
+              nav:false,
+              loop:true
+          }
       }
-   });
+  })
+
+  $('.owl-two').owlCarousel({
+   loop:true,
+   margin: 100,
+   responsiveClass:true,
+   dots:false,
+   nav:true,
+   navText: [$('.owl-next'),$('.owl-prev')],
+   responsive:{
+       0:{
+           items:1,
+           nav:true
+       },
+       600:{
+           items:1,
+           nav:true
+       },
+       1000:{
+           items:1,
+           nav:true,
+           loop:true
+       }
+   }
+})
 
    //GLIDER.JS AUTOPLAY
 
