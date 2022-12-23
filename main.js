@@ -1,4 +1,4 @@
-//#HOME GLIDER.JS INITIALIZER
+//#HOME OWL CAROUSEL INITIALIZER
 
 window.addEventListener('DOMContentLoaded', function () {
 
@@ -28,12 +28,14 @@ window.addEventListener('DOMContentLoaded', function () {
   })
 
   $('.owl-two').owlCarousel({
+   autoplay: true,
+   autoplayHoverPause: true,
    loop:true,
    margin: 100,
    responsiveClass:true,
    dots:false,
    nav:true,
-   navText: [$('.owl-next'),$('.owl-prev')],
+   navText: ['<img src="assets/icons/left.png" alt="">', '<img src="assets/icons/right.png" alt="">'],
    responsive:{
        0:{
            items:1,
@@ -50,6 +52,10 @@ window.addEventListener('DOMContentLoaded', function () {
        }
    }
 })
+
+//REMOVE INSTAGRAM WIDGET POP-UP
+function vermelho(){document.querySelector('a.eapps-link').style.opacity = "0";}
+setTimeout(vermelho,1000)
 
    //GLIDER.JS AUTOPLAY
 

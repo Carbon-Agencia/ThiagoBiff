@@ -647,21 +647,25 @@ section#feedback{
 
 #feedback .owl-prev,
 #feedback .owl-next{
-  top: 50%;
+  top: -90%;
   position: absolute;
+  transform: scale(.07);
+  transition: transform .3s;
+  opacity: .4;
+}
+
+#feedback .owl-prev{
+  left: -45%;
+}
+
+#feedback .owl-next{
+  right: -45%;
 }
 
 #feedback .owl-prev:hover,
 #feedback .owl-next:hover{
   background-color: transparent;
-}
-
-#feedback .owl-prev{
-  left: -15%;
-}
-
-#feedback .owl-next{
-  right: -15%;
+  transform: scale(.09);
 }
 
 #feedback .col-b p{
@@ -672,6 +676,25 @@ section#feedback{
 
 #feedback .item p:nth-child(2){
   font-weight: 600;
+}
+
+/*==== MEDIAS ============================================ */
+
+#medias h2{
+  font-family: 'Gotham Medium', sans-serif;
+  font-size: 2rem;
+  /* font-weight: 400; */
+  color: black;
+  letter-spacing: .3rem;
+}
+
+#medias .es-post-text{
+  letter-spacing: 0rem;
+}
+
+a.eapps-link{
+  opacity: 0!important;
+  border: solid red;
 }
 
 /*==== FOOTER ============================================ */
@@ -997,7 +1020,7 @@ footer .col-b ul.icons svg path{
     padding-block: 14rem;
   }
 
-  span {
+  #what span {
     display: block;
     line-height: 25rem;
     padding-left: 9rem;
