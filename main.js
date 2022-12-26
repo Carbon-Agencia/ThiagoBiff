@@ -9,19 +9,20 @@ window.addEventListener('DOMContentLoaded', function () {
       margin:10,
       responsiveClass:true,
       dots:false,
-      nav:false,
+      nav:true,
+      navText: ['<img src="assets/icons/homeleft.png" alt="">', '<img src="assets/icons/homeright.png" alt="">'],
       responsive:{
           0:{
               items:1,
-              nav:false
+              nav:true
           },
           600:{
               items:1,
-              nav:false
+              nav:true
           },
           1000:{
               items:1,
-              nav:false,
+              nav:true,
               loop:true
           }
       }
@@ -59,46 +60,46 @@ setTimeout(vermelho,1000)
 
    //GLIDER.JS AUTOPLAY
 
-   slideAutoPlay(slider, '#home .col-b');
+   // slideAutoPlay(slider, '#home .col-b');
 
-   function slideAutoPlay(glider, selector, delay = 5000, repeat = true) {
-      let autoplay = null;
-      const slidesCount = glider.track.childElementCount;
-      let nextIndex = 1;
-      let pause = true;
+   // function slideAutoPlay(glider, selector, delay = 5000, repeat = true) {
+   //    let autoplay = null;
+   //    const slidesCount = glider.track.childElementCount;
+   //    let nextIndex = 1;
+   //    let pause = true;
 
-      function slide() {
-         autoplay = setInterval(() => {
-            if (nextIndex >= slidesCount) {
-               if (!repeat) {
-                  clearInterval(autoplay);
-               } else {
-                  nextIndex = 0;
-               }
-            }
-            glider.scrollItem(nextIndex++);
-         }, delay);
-      }
+   //    function slide() {
+   //       autoplay = setInterval(() => {
+   //          if (nextIndex >= slidesCount) {
+   //             if (!repeat) {
+   //                clearInterval(autoplay);
+   //             } else {
+   //                nextIndex = 0;
+   //             }
+   //          }
+   //          glider.scrollItem(nextIndex++);
+   //       }, delay);
+   //    }
 
-      slide();
+   //    slide();
 
-      // TO STOP WHEN HOVERED ON IMAGE
+   //    // TO STOP WHEN HOVERED ON IMAGE
 
-      var element = document.querySelector(selector);
-      element.addEventListener('mouseover', (event) => {
-         if (pause) {
-            clearInterval(autoplay);
-            pause = false;
-         }
-      }, 300);
+   //    var element = document.querySelector(selector);
+   //    element.addEventListener('mouseover', (event) => {
+   //       if (pause) {
+   //          clearInterval(autoplay);
+   //          pause = false;
+   //       }
+   //    }, 300);
 
-      element.addEventListener('mouseout', (event) => {
-         if (!pause) {
-            slide();
-            pause = true;
-         }
-      }, 300);
-   }
+   //    element.addEventListener('mouseout', (event) => {
+   //       if (!pause) {
+   //          slide();
+   //          pause = true;
+   //       }
+   //    }, 300);
+   // }
 })
 
 //TO CHECK WHICH SECTION YOU ARE IN
@@ -108,12 +109,12 @@ onScroll()
 
 function onScroll() {
    showNavOnScroll()
-   showBackToTopButtonOnScroll()
+   // showBackToTopButtonOnScroll()
 
    activateMenuAtCurrentSection(home)
-   activateMenuAtCurrentSection(services)
    activateMenuAtCurrentSection(about)
-   activateMenuAtCurrentSection(contact)
+   activateMenuAtCurrentSection(what)
+   activateMenuAtCurrentSection(portfolio)
 }
 
 function activateMenuAtCurrentSection(section) {
@@ -152,13 +153,13 @@ function showNavOnScroll() {
    }
 }
 
-function showBackToTopButtonOnScroll() {
-   if (scrollY > 1400) {
-      backToTopButton.classList.add('show')
-   } else {
-      backToTopButton.classList.remove('show')
-   }
-}
+// function showBackToTopButtonOnScroll() {
+//    if (scrollY > 1400) {
+//       backToTopButton.classList.add('show')
+//    } else {
+//       backToTopButton.classList.remove('show')
+//    }
+// }
 
 function openMenu() {
    document.body.classList.add('menu-expanded')
@@ -172,71 +173,82 @@ function closeMenu() {
 
 ScrollReveal({
    origin: 'left',
-   distance: '120px',
-   duration: 1400
+   distance: '150px',
+   duration: 1000
 }).reveal(`
-   #homeToScroll,
-   #homeToScroll header,
-   #homeToScroll .content,
-   #contact .map`)
+   #homeToScroll , 
+   #about,
+   #about img`)
+
 
 ScrollReveal({
    origin: 'top',
-   distance: '100px',
-   duration: 1000
-}).reveal(`
-   #properties,
-   #services,
-   #services header,
-   #services .card,
-   #about,
-   #about header,
-   #about .content,
-   #about .content img,
-   #contact header,
-   #contact .content`)
+   distance: '80px',
+   duration: 700
+}).reveal(` 
+   #what,
+   #portfolio,
+   #portfolio img,
+   #feedback,
+   #medias`)
+
+// ScrollReveal({
+//    origin: 'left',
+//    distance: '120px',
+//    duration: 1400
+// }).reveal(`
+//    #homeToScroll,
+//    #homeToScroll header,
+//    #homeToScroll .content,`)
+
+// ScrollReveal({
+//    origin: 'top',
+//    distance: '100px',
+//    duration: 1000
+// }).reveal(`
+//    #about`)
 
 //MODAL WINDOW
 
-function modalClick(img) {
-   var modalW = document.getElementById("modalWindow")
-   var modalI = document.getElementById("modalImg")
-   var modalB = document.getElementById("btnClose")
-   setTimeout(() => {
+// function modalClick(img) {
+//    var modalW = document.getElementById("modalWindow")
+//    var modalI = document.getElementById("modalImg")
+//    var modalB = document.getElementById("btnClose")
+//    setTimeout(() => {
 
-   const navigation = document.querySelector('#navigation')
-   navigation.style.display = "none"
-   document.body.style.overflowY = "hidden"
+//    const navigation = document.querySelector('#navigation')
+//    navigation.style.display = "none"
+//    document.body.style.overflowY = "hidden"
 
-   modalW.style.display = 'block'
-   modalI.src = img
+//    modalW.style.display = 'block'
+//    modalI.src = img
 
-   }, 100)
-   setTimeout(() => {hey()}, 120)
-   modalB.onclick = function () {
-      const navigation = document.querySelector('#navigation')
-      modalW.style.display = 'none'
+//    }, 100)
+//    setTimeout(() => {hey()}, 120)
+//    modalB.onclick = function () {
+//       const navigation = document.querySelector('#navigation')
+//       modalW.style.display = 'none'
 
-      navigation.style.display = "block"
-      document.body.style.overflowY = "scroll"
-   }
+//       navigation.style.display = "block"
+//       document.body.style.overflowY = "scroll"
+//    }
    
-}
+// }
 
 //#PROPERTIES GLIDER.JS INITIALIZER
 
-function hey() {
-   new Glider(document.querySelector('.glider-prop'), {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      scrollLock: true,
-      scrollLockDelay: 100,
-      draggable: true,
-      dragVelocity: 1.5,
-      duration: 3,
-      arrows: {
-         prev: '.glider-prev',
-         next: '.glider-next'
-      }
-   });
-}
+// function hey() {
+//    new Glider(document.querySelector('.glider-prop'), {
+//       slidesToShow: 1,
+//       slidesToScroll: 1,
+//       scrollLock: true,
+//       scrollLockDelay: 100,
+//       draggable: true,
+//       dragVelocity: 1.5,
+//       duration: 3,
+//       arrows: {
+//          prev: '.glider-prev',
+//          next: '.glider-next'
+//       }
+//    });
+// }

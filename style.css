@@ -92,7 +92,7 @@ a {
 }
 
 section:not(#home) {
-  padding-block: 10rem;
+  padding-block: 15rem;
 }
 
 section header h4 {
@@ -119,6 +119,7 @@ section header h2 {
   color: var(--secondary-color);
   text-transform: uppercase;
   letter-spacing: 1rem;
+  cursor: default;
 }
 
 section header h1 {
@@ -134,6 +135,7 @@ section header h1 {
   position: absolute;
   top: -18.6rem;
   left: -20.3rem;
+  cursor: default;
 }
 
 section .content p {
@@ -366,6 +368,7 @@ body.menu-expanded button path {
   background-size: cover;
   display: block;
   margin-inline: auto;
+  cursor: pointer;
 }
 
 .column-left {
@@ -418,6 +421,34 @@ body.menu-expanded button path {
   width: 10rem;
   height: 10rem;
   background-color: var(--secondary-color);
+}
+
+#home .owl-prev,
+#home .owl-next{
+  top: 50%;
+  position: absolute;
+  transition: transform .3s;
+  cursor: pointer;
+}
+
+#home .owl-prev{
+  left: 10%;
+}
+
+#home .owl-next{
+  right: 10%;
+}
+
+#home .owl-prev:hover,
+#home .owl-next:hover{
+  background-color: transparent;
+  /* transform: scale(.09); */
+}
+
+#home .owl-prev img,
+#home .owl-next img{
+  width: 9rem;
+  height: 9rem;
 }
 
 /*==== ABOUT ============================================ */
@@ -616,9 +647,10 @@ body.menu-expanded button path {
 
 #portfolio .gallery-items {
   position: relative;
-  width: 540px;
-  height: 340px;
+  width: 40rem;
+  height: 22.5rem;
   object-fit: cover;
+  cursor: pointer;
 }
 
 #portfolio .gallery-items img {
@@ -652,6 +684,7 @@ section#feedback{
   transform: scale(.07);
   transition: transform .3s;
   opacity: .4;
+  cursor: pointer;
 }
 
 #feedback .owl-prev{
@@ -672,6 +705,7 @@ section#feedback{
   line-height: 2.5rem;
   letter-spacing: .1rem;
   padding-top: 2rem;
+  cursor: pointer;
 }
 
 #feedback .item p:nth-child(2){
@@ -686,6 +720,7 @@ section#feedback{
   /* font-weight: 400; */
   color: black;
   letter-spacing: .3rem;
+  margin-bottom: 0;
 }
 
 #medias .es-post-text{
@@ -705,6 +740,10 @@ footer {
   text-align: left;
   color: var(--secondary-color);
   height: 40rem;
+}
+
+footer *::selection{
+  background: var(--secondary-color);
 }
 
 footer .logo img {
@@ -1017,7 +1056,7 @@ footer .col-b ul.icons svg path{
   /*==== WHAT ======================= */
 
   section#what {
-    padding-block: 14rem;
+    padding-block: 18rem;
   }
 
   #what span {
@@ -1053,15 +1092,25 @@ footer .col-b ul.icons svg path{
   /*==== PORTFOLIO ==================== */
 
   section#portfolio {
-    padding-block: 14rem;
+    padding-block: 22rem;
   }
 
   #portfolio .wrapper {
-    width: 100%;
-    /* grid-template-columns: 1fr 0fr 1fr;
-    grid-template-areas: 'A B C';
-    padding: 0; */
+    width: min(130rem, 100%);
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 'A A'
+                         'B B';
+    padding: 0;
   }
+
+  /* #what .wrapper {
+    width: min(130rem, 100%);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      'D D D'
+      'A B C';
+    padding: 0;
+  } */
 
   /* #portfolio .col-a, #portfolio .col-b, #portfolio .col-c{
     position: relative;
