@@ -28,6 +28,8 @@ window.addEventListener('DOMContentLoaded', function () {
       }
   })
 
+//   this.document.getElementsByClassName('owl-next')[0].style.backgroundColor = "red"
+
   $('.owl-two').owlCarousel({
    autoplay: true,
    autoplayHoverPause: true,
@@ -188,7 +190,6 @@ ScrollReveal({
 }).reveal(` 
    #what,
    #portfolio,
-   #portfolio img,
    #feedback,
    #medias`)
 

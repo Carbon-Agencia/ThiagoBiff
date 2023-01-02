@@ -230,9 +230,9 @@ nav .wrapper {
   justify-content: space-between;
 }
 
-nav .wrapper a.logo img {
+/* nav .wrapper a.logo img {
   width: 350px;
-}
+} */
 
 nav button {
   background: none;
@@ -371,22 +371,21 @@ body.menu-expanded button path {
   cursor: pointer;
 }
 
-.column-left {
-  background-color: var(--brand-salmon);
-  position: absolute;
-  left: 0;
-  width: 8%;
-  height: 82rem;
-  z-index: 2;
-}
-
+.column-left,
 .column-right {
   background-color: var(--brand-salmon);
   position: absolute;
-  right: 0;
-  height: 82rem;
   width: 8%;
+  height: max(42vw);
   z-index: 2;
+}
+
+.column-left{
+  left: 0;
+}
+
+.column-right {
+  right: 0;
 }
 
 #home .col-b {
@@ -399,8 +398,8 @@ body.menu-expanded button path {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 25rem;
-  z-index: 3;
+  height: 23rem;
+  z-index: 2;
 }
 
 #home .col-b .column-bottom p {
@@ -425,10 +424,11 @@ body.menu-expanded button path {
 
 #home .owl-prev,
 #home .owl-next{
-  top: 50%;
+  top: 35%;
   position: absolute;
   transition: transform .3s;
   cursor: pointer;
+  z-index: 3;
 }
 
 #home .owl-prev{
@@ -485,7 +485,7 @@ body.menu-expanded button path {
   background-color: var(--secondary-color);
 }
 
-#about .sqr-design {
+#about .sqr {
   scale: 0.4;
 }
 
@@ -496,13 +496,19 @@ body.menu-expanded button path {
   text-align: justify;
 }
 
-#about img {
+/* #about img {
   position: relative;
   -webkit-box-shadow: -1px 10px 21px -8px #5b5b5b;
   box-shadow: -1px 10px 21px -8px #5b5b5b;
+} */
+
+#about .sqr {
+  position: absolute;
+  left: -4%;
+  top: 55%;
 }
 
-#about .img-square::before {
+/* #about .col-b::before {
   content: '';
   position: absolute;
   bottom: -8rem;
@@ -512,8 +518,8 @@ body.menu-expanded button path {
   background-color: transparent;
   border: 3px solid var(--secondary-color);
   clip-path: polygon(100% 0, 100% 81%, 80% 100%, 0 100%, 0 0);
-  z-index: 10;
-}
+  z-index: 1000;
+} */
 
 /*==== WHAT ============================================ */
 
@@ -523,13 +529,15 @@ body.menu-expanded button path {
 }
 
 #what img {
-  width: 40rem;
+  width: max(24vw);
+  height: max(33vw);
   transition: 1s;
 }
 
 #what .descriptions {
   position: absolute;
-  top: 20rem;
+  top: 20%;
+  /* top: 12.5rem; */
   opacity: 0;
   width: 100%;
   transition: 1s;
@@ -553,20 +561,21 @@ body.menu-expanded button path {
 }
 
 #what .descriptions h3 {
-  font-size: 3rem;
+  font-size: max(2vw);
   text-transform: uppercase;
   padding-bottom: 2rem;
-  transform: translateY(-20rem);
+  transform: translateY(-10rem);
   transition: 1s;
 }
 
 #what .descriptions p {
-  width: 25rem;
+  font-size: max(1.2vw);
+  width: max(20vw);
   font-family: 'Gotham';
   font-weight: 400;
   text-align: center;
   margin: auto;
-  line-height: 2rem;
+  line-height: max(1.4vw);
   transform: translateY(7rem);
   transition: 1s;
 }
@@ -601,10 +610,10 @@ body.menu-expanded button path {
 }
 
 #portfolio p{
-  font-size: 2.5rem;
+  font-size: max(1.2vw);
   font-family: 'Gotham', sans-serif;
   font-weight: 700;
-  line-height: 4rem;
+  line-height: 150%;
   white-space: nowrap;
   letter-spacing: 6px;
   text-transform: uppercase;
@@ -629,26 +638,27 @@ body.menu-expanded button path {
 
 #portfolio .col:hover img {
   background-color: var(--brand-light);
-  opacity: 0.3;
+  opacity: 0.1;
 }
 
 #portfolio .gallery-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 15px;
+  gap: 10px;
+  height: 0;
 }
 
 #portfolio .gallery-col {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 10px;
 }
 
 #portfolio .gallery-items {
   position: relative;
-  width: 40rem;
-  height: 22.5rem;
+  width: 26vw;
+  height: 15vw;
   object-fit: cover;
   cursor: pointer;
 }
@@ -877,7 +887,7 @@ footer .col-b ul.icons svg path{
   }
 
   nav#navigation .logo img {
-    width: min(25rem);
+    width: max(20vw);
   }
 
   nav#navigation .menu ul:nth-child(1) {
@@ -1012,7 +1022,7 @@ footer .col-b ul.icons svg path{
 
   #home img {
     width: 100vw;
-    height: 82rem;
+    height: max(42vw);
     display: block;
     margin-inline: auto;
     object-position: initial;
@@ -1066,7 +1076,7 @@ footer .col-b ul.icons svg path{
   }
 
   #what .wrapper {
-    width: min(130rem, 100%);
+    width: min(125rem, 100%);
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
       'D D D'
@@ -1097,7 +1107,7 @@ footer .col-b ul.icons svg path{
 
   #portfolio .wrapper {
     width: min(130rem, 100%);
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
     grid-template-areas: 'A A'
                          'B B';
     padding: 0;
