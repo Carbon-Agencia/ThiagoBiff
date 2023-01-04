@@ -464,11 +464,9 @@ body.menu-expanded button path {
 
 #about a {
   color: var(--secondary-color);
-}
-
-#about a {
   font-size: 1.3rem;
   font-weight: 500;
+  margin-bottom: -2rem;
   text-decoration: none;
   text-transform: uppercase;
   padding-left: 2.5rem;
@@ -477,7 +475,7 @@ body.menu-expanded button path {
 #about a::before {
   content: '';
   position: absolute;
-  bottom: 0.15rem;
+  bottom: .3rem;
   left: -0.5rem;
   width: 2rem;
   height: 2rem;
@@ -485,13 +483,9 @@ body.menu-expanded button path {
   background-color: var(--secondary-color);
 }
 
-#about .sqr {
-  scale: 0.4;
-}
-
 #about p {
   color: #000000;
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Gotham Regular', sans-serif;
   font-weight: 400;
   text-align: justify;
 }
@@ -505,7 +499,8 @@ body.menu-expanded button path {
 #about .sqr {
   position: absolute;
   left: -4%;
-  top: 55%;
+  top: 60%;
+  scale: 0.4;
 }
 
 /* #about .col-b::before {
@@ -1031,11 +1026,12 @@ footer .col-b ul.icons svg path{
   /*==== ABOUT ======================= */
 
   #about .wrapper {
+    width: min(115rem, 100%);
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'B A'
       'C C';
-    gap: 6.7rem;
+    /* gap: 6.7rem; */
   }
 
   #about .col-a {
@@ -1047,8 +1043,10 @@ footer .col-b ul.icons svg path{
   }
 
   #about .col-b img {
-    margin-top: 10rem;
+    margin-top: 11rem;
+    width: 45rem;
     height: 60rem;
+    /* margin-left: 10rem; */
   }
 
   #about .col-c {
@@ -1057,10 +1055,10 @@ footer .col-b ul.icons svg path{
 
   #about .col-c img {
     z-index: 10;
-    width: 90rem;
+    width: 70rem;
     position: absolute;
     right: 0;
-    top: -25rem;
+    top: -15rem;
   }
 
   /*==== WHAT ======================= */
