@@ -561,8 +561,7 @@ body.menu-expanded button path {
 
 #what .descriptions {
   position: absolute;
-  top: 20%;
-  /* top: 12.5rem; */
+  top: 10%;
   opacity: 0;
   width: 100%;
   transition: 1s;
@@ -586,22 +585,22 @@ body.menu-expanded button path {
 }
 
 #what .descriptions h3 {
-  font-size: max(3vw);
+  font-size: 1.8rem;
   text-transform: uppercase;
   padding-bottom: 2rem;
-  transform: translateY(-8rem);
+  transform: translateY(-4rem);
   transition: 1s;
 }
 
 #what .descriptions p {
-  font-size: max(2.2vw);
-  width: max(30vw);
+  font-size: 1.2rem;
+  width: 17rem;
   font-family: 'Gotham';
   font-weight: 400;
   text-align: center;
   margin: auto;
-  line-height: max(2.4vw);
-  transform: translateY(6rem);
+  line-height: 1.5rem;
+  transform: translateY(2.5rem);
   transition: 1s;
 }
 
@@ -1159,6 +1158,17 @@ footer .col-c {
   #what {
   background-color: var(--bg-color);
   text-align: center;
+}
+
+#what .container{
+  display: flex;
+  justify-content: center;
+}
+
+#what .col{
+  margin: auto;
+  position: relative;
+  width: 100%;
 }
 
 #what h2 {
