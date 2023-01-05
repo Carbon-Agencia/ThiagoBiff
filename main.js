@@ -31,6 +31,7 @@ window.addEventListener('DOMContentLoaded', function () {
 //   this.document.getElementsByClassName('owl-next')[0].style.backgroundColor = "red"
 
   $('.owl-two').owlCarousel({
+   center: true,
    autoplay: true,
    autoplayHoverPause: true,
    loop:true,
