@@ -112,7 +112,7 @@ section header h4:hover:not(#first) {
 section header h2 {
   line-height: 3.9rem;
   margin-bottom: 2rem;
-  font-size: 5rem;
+  font-size: 4rem;
   font-family: 'NewYork', sans-serif;
   font-weight: 400;
   color: var(--secondary-color);
@@ -542,9 +542,21 @@ body.menu-expanded button path {
 }
 
 #what img {
-  width: max(24vw);
-  height: max(33vw);
+  width: 19.6rem;
+  height: 35rem;
   transition: 1s;
+  margin-bottom: 2rem;
+}
+
+#what h2 {
+  display: block;
+  line-height: 5rem;
+}
+
+#what .col{
+  margin: auto;
+  position: relative;
+  width: 50%;
 }
 
 #what .descriptions {
@@ -574,22 +586,22 @@ body.menu-expanded button path {
 }
 
 #what .descriptions h3 {
-  font-size: max(2vw);
+  font-size: max(3vw);
   text-transform: uppercase;
   padding-bottom: 2rem;
-  transform: translateY(-10rem);
+  transform: translateY(-8rem);
   transition: 1s;
 }
 
 #what .descriptions p {
-  font-size: max(1.2vw);
-  width: max(20vw);
+  font-size: max(2.2vw);
+  width: max(30vw);
   font-family: 'Gotham';
   font-weight: 400;
   text-align: center;
   margin: auto;
-  line-height: max(1.4vw);
-  transform: translateY(7rem);
+  line-height: max(2.4vw);
+  transform: translateY(6rem);
   transition: 1s;
 }
 
@@ -1143,6 +1155,68 @@ footer .col-c {
     text-align: left;
     padding-left: 10rem;
   }
+
+  #what {
+  background-color: var(--bg-color);
+  text-align: center;
+}
+
+#what h2 {
+  display: block;
+  line-height: 15rem;
+}
+
+#what img {
+  width: max(24vw);
+  height: max(33vw);
+  transition: 1s;
+}
+
+#what .descriptions {
+  position: absolute;
+  top: 20%;
+  /* top: 12.5rem; */
+  opacity: 0;
+  width: 100%;
+  transition: 1s;
+  visibility: visible;
+}
+
+#what .col:hover img {
+  background-color: var(--brand-light);
+  opacity: 0.3;
+}
+
+#what .col:hover .descriptions {
+  opacity: 1;
+  visibility: visible;
+  cursor: default;
+}
+
+#what .col:hover .descriptions h3,
+#what .col:hover .descriptions p {
+  transform: translateY(0);
+}
+
+#what .descriptions h3 {
+  font-size: max(2vw);
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+  transform: translateY(-10rem);
+  transition: 1s;
+}
+
+#what .descriptions p {
+  font-size: max(1.2vw);
+  width: max(20vw);
+  font-family: 'Gotham';
+  font-weight: 400;
+  text-align: center;
+  margin: auto;
+  line-height: max(1.4vw);
+  transform: translateY(4rem);
+  transition: 1s;
+}
 
   /*==== PORTFOLIO ==================== */
 
