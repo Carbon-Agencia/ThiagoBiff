@@ -59,7 +59,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 //REMOVE INSTAGRAM WIDGET POP-UP
 function vermelho(){document.querySelector('a.eapps-link').style.opacity = "0";}
-setTimeout(vermelho,1000)
+setTimeout(vermelho,2000)
 
    //GLIDER.JS AUTOPLAY
 
