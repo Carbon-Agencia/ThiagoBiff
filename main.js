@@ -254,3 +254,25 @@ ScrollReveal({
 //       }
 //    });
 // }
+
+$(document).ready(function() {
+   $(".filter .item-portfolio").click(function(){
+      $(this).addClass("active").siblings().removeClass("active")
+
+      $(".itens-portfolio").fadeOut()
+      setTimeout(function(){
+         $(".itens-portfolio").fadeIn()
+      }, 700)
+
+      let value = $(this).attr("data-filter")
+
+      setTimeout(function(){
+         if(value === "todos"){
+            $(".itens-portfolio .item-portfolio").show("500")
+         } else{
+            $(".itens-portfolio .item-portfolio").not("." + value).hide("500")
+            $(".itens-portfolio .item-portfolio").filter("." + value).show("500")
+         }
+      }, 350)
+   })
+})

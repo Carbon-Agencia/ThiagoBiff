@@ -655,7 +655,7 @@ body.menu-expanded button path {
   display: block;
 }
 
-#portfolio li a {
+#portfolio li {
   text-transform: uppercase;
   text-decoration: none;
   color: #0000005b;
@@ -663,14 +663,15 @@ body.menu-expanded button path {
   font-weight: 500;
   margin: 2rem;
   transition: color 0.5s;
+  cursor: pointer;
 }
 
-#portfolio li a:hover {
+#portfolio li:hover {
   color: #000000;
 }
 
 #portfolio p {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: 'Gotham', sans-serif;
   font-weight: 700;
   line-height: 150%;
@@ -683,25 +684,29 @@ body.menu-expanded button path {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 1s; 
 }
 
-#portfolio .col:hover p {
+#portfolio .item-portfolio{
+  position: relative;
+}
+
+#portfolio .item-portfolio:hover p {
   opacity: 1;
 }
 
 #portfolio img {
-  width: 50rem;
-  height: 30rem;
+  width: 30rem;
+  height: 20rem;
   transition: 1s;
 }
 
-#portfolio .col:hover img {
+#portfolio .item-portfolio:hover img {
   background-color: var(--brand-light);
   opacity: 0.1;
 }
 
-#portfolio .gallery-container {
+/* #portfolio .gallery-container {
   flex-wrap: wrap;
   justify-content: space-evenly;
   height: 200rem;
@@ -725,7 +730,7 @@ body.menu-expanded button path {
 #portfolio .gallery-items img {
   width: 100%;
   height: 100%;
-}
+} */
 
 /*==== FEEDBACK ============================================ */
 
@@ -1358,12 +1363,12 @@ footer .col-c {
   }
 
   #portfolio{
-    height: 200%;
+    height: 140rem;
   }
 
   #portfolio .wrapper {
     width: min(130rem, 100%);
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas:
       'A A'
       'B B';
@@ -1383,7 +1388,7 @@ footer .col-c {
     display: inline;
   }
 
-  #portfolio li a {
+  #portfolio li {
     text-transform: uppercase;
     text-decoration: none;
     color: #0000005b;
@@ -1393,12 +1398,12 @@ footer .col-c {
     transition: color 0.5s;
   }
 
-  #portfolio li a:hover {
+  #portfolio li:hover {
     color: #000000;
   }
 
-  #portfolio p {
-    font-size: max(1.2vw);
+  /* #portfolio p {
+    font-size: 2rem;
     font-family: 'Gotham', sans-serif;
     font-weight: 700;
     line-height: 150%;
@@ -1427,34 +1432,28 @@ footer .col-c {
   #portfolio .col:hover img {
     background-color: var(--brand-light);
     opacity: 0.1;
-  }
+  } */
 
-  #portfolio .gallery-container {
+  #portfolio .itens-portfolio{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 10px;
-    height: 0;
+    list-style: none;
   }
 
-  #portfolio .gallery-col {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-
-  #portfolio .gallery-items {
+  #portfolio .itens-portfolio .item-portfolio{
     position: relative;
-    width: 40rem;
-    height: 22.5rem;
-    object-fit: cover;
-    cursor: pointer;
-    margin-bottom: 0;
+    width: 30rem;
+    height: 20rem;
   }
 
-  #portfolio .gallery-items img {
+  #portfolio .itens-portfolio .item-portfolio img{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 
   /* #what .wrapper {
